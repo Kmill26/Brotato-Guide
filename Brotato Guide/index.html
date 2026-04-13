@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Brotato Master Guide</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>Brotato Master Guide</h1>
+      <p>62 characters, weapon database, optimized strategy paths</p>
+    </header>
+
+    <main>
+      <section class="controls">
+        <input id="search" type="search" placeholder="Search character or weapon..." />
+        <label><input type="checkbox" id="showDlc" checked /> Include DLC</label>
+        <label><input type="checkbox" id="musicToggle" /> Background music</label>
+        <label><input type="checkbox" id="sfxToggle" checked /> UI SFX</label>
+        <label><input type="checkbox" id="reducedMotionToggle" /> Reduced motion</label>
+        <label>
+          Music theme
+          <select id="musicTheme">
+            <option value="ambienttech">Ambient Tech</option>
+            <option value="voiddrift">Void Drift</option>
+            <option value="midnight">Midnight</option>
+            <option value="glasshaze">Glass Haze</option>
+            <option value="depth">Depth</option>
+          </select>
+        </label>
+        <label>
+          Music volume
+          <input id="musicVolume" type="range" min="0" max="100" value="28" />
+        </label>
+        <label>
+          SFX volume
+          <input id="sfxVolume" type="range" min="0" max="100" value="45" />
+        </label>
+        <label>
+          Character sort
+          <select id="characterSort">
+            <option value="alpha-asc">A → Z</option>
+            <option value="alpha-desc">Z → A</option>
+            <option value="confidence">Start confidence</option>
+          </select>
+        </label>
+        <label>
+          Weapon sort
+          <select id="weaponSort">
+            <option value="alpha-asc">A → Z</option>
+            <option value="alpha-desc">Z → A</option>
+            <option value="tier-asc">Tier low → high</option>
+            <option value="tier-desc">Tier high → low</option>
+            <option value="class">Class</option>
+          </select>
+        </label>
+      </section>
+
+      <section>
+        <h2>Build Planner</h2>
+        <div class="planner">
+          <label>
+            Character
+            <select id="plannerCharacter"></select>
+          </label>
+          <label>
+            Primary weapon
+            <select id="plannerWeapon"></select>
+          </label>
+          <button id="plannerGenerate">Generate Plan</button>
+        </div>
+        <article id="plannerOutput" class="panel"></article>
+      </section>
+
+      <section>
+        <h2>Characters</h2>
+        <div id="characterCount" class="meta"></div>
+        <div id="characterGrid" class="grid"></div>
+      </section>
+
+      <section>
+        <h2>Weapons</h2>
+        <div id="weaponCount" class="meta"></div>
+        <div id="weaponGrid" class="grid"></div>
+      </section>
+    </main>
+
+    <dialog id="detailModal">
+      <article id="modalContent"></article>
+      <button id="closeModal">Close</button>
+    </dialog>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
